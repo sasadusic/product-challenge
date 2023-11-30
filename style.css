@@ -1,0 +1,153 @@
+:root{
+/* Primary */
+--Dark-cyan: hsl(158, 36%, 37%);
+--Dark-cyan-20: hsl(158, 36%, 20%);
+--Cream: hsl(30, 38%, 92%);
+
+/* Neutral */
+--Very-dark-blue: hsl(212, 21%, 14%);
+--Dark-grayish-blue: hsl(228, 12%, 48%);
+--White: hsl(0, 0%, 100%);
+}
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;  }
+  /*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  /*
+    5. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+    6. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    7. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  /*
+    8. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+body{
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: var(--Cream);
+}
+.card{
+    position: relative;
+    display: flex;
+    height: 440px;
+    border-radius: 5px;
+    overflow: hidden;
+    background: var(--White);
+}
+.card-img{
+    position: relative;
+}
+.card-right{
+    position: relative;
+    width: 283px;
+    padding: 24px;
+}
+.perfume{
+    font-size: 14px;
+    text-transform: uppercase;
+    color: var(--Dark-grayish-blue);
+    margin-bottom: 18px;
+}
+.header{
+    font-family: 'Fraunces';
+    line-height: 1;
+    margin-bottom: 18px;
+}
+.phar{
+    font-size: 14px;
+    color: var(--Dark-grayish-blue);
+    margin-bottom: 24px;
+}
+.price-cont{
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+}
+.price-big{
+    font-family: 'Fraunces';
+    font-size: 24px;
+    color: var(--Dark-cyan);
+    font-weight: 700;
+    margin-right: 18px;
+}
+.price-sm{
+    font-size: 14px;
+    color: var(--Dark-grayish-blue);
+}
+.btn{
+    position: relative;
+    width: 100%;
+    font-size: 14px;
+    outline-color: transparent;
+    border: none;
+    background: var(--Dark-cyan);
+    color: var(--White);
+    padding: 12px;
+    font-weight: 500;
+    border-radius: 5px;
+    display: inline-flex;
+    gap: 8px;
+    justify-content: center;
+}
+.btn:is(:hover, :focus){
+    background: var(--Dark-cyan-20);
+}
+.btn[data-icon="shopping-card"]::before{
+    content: '';
+    width: 15px;
+    height: 16px;
+    /* background: #f00; */
+    background-image: url(images/icon-cart.svg);
+}
+@media (width >= 576px){
+    picture{
+        position: relative;
+        width: 283px;
+    }
+}
+@media (width < 576px){
+    .card{
+        flex-direction: column;
+        height: auto;
+        margin: 24px;
+    }
+    .card-right{
+        width: 100%;
+    }
+}
